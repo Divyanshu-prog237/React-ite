@@ -7,7 +7,6 @@ import img from '../assets/about.jpeg'
 import specializations from '../assets/specializations.png.jpeg'
 import choice from '../assets/choice.jpeg'
 import team from '../assets/team.png.jpeg'
-import './Home.css';
 
 
 // Import Swiper styles

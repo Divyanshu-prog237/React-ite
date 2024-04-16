@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import './Login.css';
+
 
 const Login = () => {
   return (

@@ -2,14 +2,14 @@ import React from 'react'
 
 const Feedback = () => {
   return (
-    <div>
+    <div className='hrsp'>
       <>
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feedback Form</title>
   <link rel="stylesheet" href="styles.css" />
-  <div className="container">
-    <h2>Feedback Form</h2>
+  <div className="containerfeed">
+    <h2 className='feed'>Feedback Form</h2>
     <form action="#">
       <label htmlFor="name">Name:</label>
       <input type="text" id="name" name="name" required="" />
