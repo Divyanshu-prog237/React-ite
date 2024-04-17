@@ -13,6 +13,7 @@ import Login from './component/Login'
 
 import Servicestest from './component/Servicestest'
 import Addservices from './component/Addservices'
+import Loginn from './component/Loginn'
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
     <Route path='/Login' element={<Login/>} />
     <Route path='/Servicestest' element={<Servicestest/>}/>
     <Route path='/Addservices' element={<Addservices/>} />
+    <Route path='/Loginn' element={<Loginn/>} />
+   
    </Routes>
 
    </SnackbarProvider>

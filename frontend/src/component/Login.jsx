@@ -5,7 +5,6 @@ import { RiLockPasswordFill } from "react-icons/ri";
 
 const Login = () => {
   return (
-    <div className='divy'>
     <div className='wrapper'>
         <form action=''>
             <h1>
@@ -28,7 +27,6 @@ const Login = () => {
                 <p>Don't Hace and account <a href='#'>Register</a></p>
             </div>
         </form>
-    </div>
     </div>
   )
 }

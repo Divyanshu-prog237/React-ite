@@ -55,7 +55,7 @@ const Addservices = () => {
         <label htmlFor="productImage">Image URL:</label>
         <input type="url" id="imageurl" value={Addservices.values.imageurl}  onChange={Addservices.handleChange} required />
 
-        <button type="submit">Add Services</button>
+        <button type="submit" className='probut'>Add Services</button>
       </form>
     </div>
   );

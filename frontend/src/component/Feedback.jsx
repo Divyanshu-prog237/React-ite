@@ -3,7 +3,7 @@ import React from 'react'
 const Feedback = () => {
   return (
     <div className='hrsp'>
-      <>
+      
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feedback Form</title>
@@ -17,10 +17,9 @@ const Feedback = () => {
       <input type="email" id="email" name="email" required="" />
       <label htmlFor="feedback">Feedback:</label>
       <textarea id="feedback" name="feedback" required="" defaultValue={""} />
-      <input type="submit" defaultValue="Submit" />
+      <input type="submit" className='feedbut' defaultValue="Submit" />
     </form>
   </div>
-</>
 
     </div>
   )
