@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useRef, useState } from 'react';
 import rocket from '../assets/homeLaunch.gif'
-import { Swiper, SwiperSlide } from 'swiper/react';
 import img from '../assets/about.jpeg'
+import { Swiper, SwiperSlide } from 'swiper/react';
 import specializations from '../assets/specializations.png.jpeg'
 import choice from '../assets/choice.jpeg'
 import team from '../assets/team.png.jpeg'

@@ -4,7 +4,7 @@ const port = 3000;
 const cors = require('cors')
 
 const UserRouter = require('./Routers/User')
-const ServiceRouter = require('./Routers/Addservices')
+const ServiceRouter = require('./Routers/Services')
 
 app.use(cors({
     origin: ['http://localhost:5173'],
@@ -14,7 +14,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/user', UserRouter)
-app.use('/Addservices', ServiceRouter)
+app.use('/services', ServiceRouter)
 
 
 app.listen(port, () => {
