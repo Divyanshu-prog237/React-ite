@@ -12,6 +12,7 @@ import Feedback from './component/Feedback'
 import Login from './component/Login'
 import { AppProvider } from './AppContext'
 import Addservices from './component/Addservices'
+<<<<<<< HEAD
 import Services from './component/Services'
 import PServices from './component/PService'
 import MServices from './component/MService'
@@ -25,6 +26,29 @@ const App = () => {
         <SnackbarProvider>
           <Navbar />
           <Routes>
+=======
+import Loginn from './component/Loginn'
+
+const App = () => {
+  return (
+   <BrowserRouter>
+   <SnackbarProvider>
+   <Navbar/>
+   <Routes>
+    
+    <Route path='/' element={<Home/>}/>
+    <Route path='/Home' element={<Home />} />
+    <Route path='/SignUp' element={<SignUp/>} />
+    <Route path='/Contact' element={<Contact/>} />
+    <Route path='/About' element={<About/>} />
+    <Route path='/Feedback' element={<Feedback/>} />
+    <Route path='/Login' element={<Login/>} />
+    <Route path='/Servicestest' element={<Servicestest/>}/>
+    <Route path='/Addservices' element={<Addservices/>} />
+    <Route path='/Loginn' element={<Loginn/>} />
+   
+   </Routes>
+>>>>>>> fa51dc0f4cd8c6fff87a602f065ceeca871525dd
 
             <Route path='/' element={<Home />} />
             <Route path='/Home' element={<Home />} />
