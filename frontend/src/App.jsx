@@ -7,13 +7,13 @@ import Navbar from './component/Navbar'
 import Home from './component/Home'
 import SignUp from './component/SignUp'
 import {SnackbarProvider} from "notistack"
-import Contact from './component/Contact'
 import Feedback from './component/Feedback'
 import Login from './component/Login'
 
 import Servicestest from './component/Servicestest'
 import Addservices from './component/Addservices'
 import Loginn from './component/Loginn'
+import Contact from './component/Contact'
 
 const App = () => {
   return (
