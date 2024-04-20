@@ -7,10 +7,10 @@ const Addservices = () => {
    //step:1 formik
    const Addservices = useFormik({
     initialValues: {
-      productname:"",
-      description:'',
-      price:"",
-      imageurl:""
+      sname:"",
+      sdescription:'',
+      simage:"",
+      scategory:""
     },
     onSubmit : async(values) => {
       console.log(values);
@@ -36,7 +36,7 @@ const Addservices = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // You can perform further actions here, such as sending the product data to a server or updating state in a parent component
-    console.log('Product added:', { productname, description, price, imageurl });
+    console.log('Product added:', { sname, sdescription, scategory, simage });
   };
 
   return (
@@ -44,16 +44,16 @@ const Addservices = () => {
       <h2>Add Services</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="productName">Product Name:</label>
-        <input type="text" id="productname" value={Addservices.values.productname}  onChange={Addservices.handleChange} required />
+        <input type="text" id="sname" value={Addservices.values.sname}  onChange={Addservices.handleChange} required />
 
         <label htmlFor="productDescription">Description:</label>
-        <textarea id="description" value={Addservices.values.description}  onChange={Addservices.handleChange} required />
+        <textarea id="sdescription" value={Addservices.values.sdescription}  onChange={Addservices.handleChange} required />
 
-        <label htmlFor="productPrice">Price:</label>
-        <input type="number" id="price" value={Addservices.values.price}  onChange={Addservices.handleChange} required />
+        <label htmlFor="productCategory">Category:</label>
+        <input type="text" id="scategory" value={Addservices.values.scategory}  onChange={Addservices.handleChange} required />
 
         <label htmlFor="productImage">Image URL:</label>
-        <input type="url" id="imageurl" value={Addservices.values.imageurl}  onChange={Addservices.handleChange} required />
+        <input type="file" id="simage" value={Addservices.values.simage}  onChange={Addservices.handleChange} required />
 
         <button type="submit" className='probut'>Add Services</button>
       </form>
