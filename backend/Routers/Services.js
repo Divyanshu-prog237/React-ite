@@ -100,9 +100,9 @@ router.delete("/delete/:id",(req,res)=>{
 });
 
 
-router.get("/getbycategory/:category",(req,res)=>{
+router.get("/getbycategory/:scategory",(req,res)=>{
 
-    Model.find({category: req.params.category})
+    Model.find({scategory: req.params.scategory})
 
     .then((result)=>{
         res.json(result);

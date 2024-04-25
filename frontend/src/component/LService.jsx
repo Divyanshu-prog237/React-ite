@@ -38,7 +38,7 @@ const LServices = () => {
             <div className="row">
               <div className="col-md-4">
                 <img
-                  className="img-fluid p-card-img"
+                  className="img-fluid p-card-img rounded-circle"
                   src={"http://localhost:3000/" + service.simage}
                   alt=""
                 />

@@ -236,86 +236,7 @@
   .containerfeed {
     animation: slideIn 0.5s ease forwards;
   }
-  
 
-/*---------Services CSS----------*/
-/*
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-.divvy{
-    width: 100%;
-    background-color: #809faa;
-}
-.title h1{
-    text-align: center;
-    padding-top: 50px;
-    font-size: 42px;
-}
-.title h1::after{
-    content: "";
-    height: 4px;
-    width: 230px;
-    background-color: #000;
-    display: block;
-    margin: auto;
-}
-.services{
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 75px auto;
-    
-}
-.card{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items:center ;
-    flex-direction: column;
-    margin: 0px 20px;
-    padding: 20px 20px;
-    background-color: #efefef;
-    border-radius: 10px;
-    cursor: pointer;
-}
-.card:hover{
-    background-color: #b8d4de;
-    transition: 0..4s ease;;
-}
-.card .icon{
-    font-size: 35px;
-    margin-bottom: 10px;
-}
-.card h2{
-    font-size: 28px;
-    color:#c94f4f;
-    margin-bottom: 20px;
-}
-.card p{
-    font-size: 17px;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    color: #5e5e5e;
-}
-.button{
-    font-size: 15px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #105dc2;
-    padding: 8px 12px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-
-}
-.button:hover{
-    background-color: #c94f4f;
-    transition: 0.4s ease;
-}*/
 
 /*----------Services-------*/
 .iin{
@@ -379,7 +300,6 @@ textarea {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 button[type="submit"]:hover {
   background-color: #0056b3;
 }
@@ -391,6 +311,7 @@ button[type="submit"]:hover {
   width: 100%;
   padding: 1rem;
   z-index: 1000;
+  height: 70px;
 }
 /* Navbar.css */
 .navbar-transparent {
@@ -405,29 +326,16 @@ button[type="submit"]:hover {
   /* Add other styles as needed */
 }
 .n-con{
-  margin-left: 550px;
-=======
-probut[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-left: 500px;
 }
 
-probut[type="submit"]:hover {
-  background-color: #0056b3;
-}
-/*------------Loginn CSS-----------------------*/
+/* /------------Loginn CSS-----------------------/ */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
+/* 
 * {
 	box-sizing: border-box;
-}
+} */
 
 .logincss {
 	background: #f6f5f7;
@@ -648,5 +556,113 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
->>>>>>> fa51dc0f4cd8c6fff87a602f065ceeca871525dd
 }
+
+/* PLanning Services */
+.ps-head{
+  background-image: url('https://image.freepik.com/free-vector/planning-web-banner-concept-idea-business-plan-strategy-setting-goal-target-following-schedule-illustration_277904-4144.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90%;
+  height: 300px;
+  margin-left: 60px;
+  border-radius: 50px;
+}
+.ps-search{
+  height: 60px;
+}
+.p-card{
+width: 1000px;
+}
+.p-card-img{
+height: 200px;
+}
+/* Launching Services */
+
+.ls-head{
+background-image: url('./assets/launching.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+width: 90%;
+height: 300px;
+margin-left: 60px;
+border-radius: 50px;
+}
+
+/* managing services */
+.ms-head{
+background-image: url('./assets/management.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+width: 90%;
+height: 300px;
+margin-left: 60px;
+border-radius: 50px;
+}
+
+/* View Services */
+.ser-icon{
+  width: 200px;
+  
+}
+.ser{
+  margin-left: 700px;
+  margin-top: -15px;
+  position: fixed;
+
+
+}
+.ser-i{
+  position:fixed;
+  margin-left: -200px;
+  margin-top: 50px;
+}
+
+.ser-ic{
+  width: 200px; 
+}
+
+/* /---------Contact---/ */
+/* .header1{
+  width: 100vw;
+  height: 80vh;
+  background-image: url(./assets/Banner3.jpeg);
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.header-content{
+  margin-bottom: 150px;
+  color: #e8e8f0d8;
+  text-align: center;
+}
+.header-content h1{
+  font-size: 20vmin;
+
+}
+.line{
+  width: 300px;
+  height: 4px;
+  background-color: #c94f4f;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+a{
+  text-decoration: none;
+}
+.bqq{
+  padding: 8px 15px;
+  background: #791717;
+  border-radius: 30px;
+  color: whitesmoke;
+  margin-top: auto;
+} */
+
+/* /------------------Form CSS-----------/ */
+/* .containerrr{
+  width: 80vw;
+} */

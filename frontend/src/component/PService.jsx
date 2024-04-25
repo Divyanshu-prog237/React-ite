@@ -30,8 +30,8 @@ const PServices = () => {
   const displayServices = () => {
     return services.map((service) => (
       <div className="conatainer">
-        <div className="col-md-8">
-          <div className="card p-3 mb-5 bg-dark p-card">
+        <div className="">
+          <div className="card p-3 mb-5 p-card">
             <div className="row d-flex align-items-center">
               <div className="col-md-4">
                 <img
@@ -41,9 +41,10 @@ const PServices = () => {
                 />
               </div>
               <div className="col-md-7">
-                <h3 style={{ paddingLeft: "20px" }} className="mt-3 text-light">{service.sname}</h3>
-                <p style={{ paddingLeft: "20px" }} className="text-light">{service.sdescription}</p>
-                {/* <Link to={'/view/' + service._id} className="btn btn-outline-primary m-2">Know More</Link> */}
+                <h3 style={{ paddingLeft: "20px" }} className="mt-3">{service.sname}</h3>
+                <p style={{ paddingLeft: "20px" }} className="">{service.sdescription}</p>
+                {/* <Link to={'/ViewService/' + service._id} className="btn btn-outline-primary m-2">Know More</Link> */}
+                <Link to={'/ViewService/' + service._id} className="btn btn-outline-primary m-2">Know More</Link>
               </div>
             </div>
           </div>
@@ -51,15 +52,6 @@ const PServices = () => {
       </div>
     ));
   };
-
-
-  // const filterProducts = (e) => {
-  //     const value = e.target.value;
-  //     setproductList(productList.filter((laptop) => {
-  //         return laptop.name.toLowerCase().includes(value.toLowerCase())
-  //     })
-  //     );
-  // };
 
   return (
     <div className=''>

@@ -1,9 +1,13 @@
 
 const {Schema, model} = require('../connection')
 const userSchema = new Schema({
-    name: String,
+    fname: String,
+    lname: String,
     email: String,
-    password: String
+    password: String,
+    role: {type:String, default: "user"},
+    avatar: {type:String, default: "avatar_placeholder.png"},
+    createdAt: Date
     
 
 });

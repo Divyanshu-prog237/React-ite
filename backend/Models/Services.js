@@ -1,4 +1,3 @@
-
 const {Schema, model} = require('../connection');
 
 const myschema = new Schema({
@@ -11,4 +10,3 @@ const myschema = new Schema({
 });
 
 module.exports = model('services',myschema);
-

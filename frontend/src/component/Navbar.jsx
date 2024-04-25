@@ -8,7 +8,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
-  // const isServicePage = location.pathname === '/Services';
 
   const isLoggedIn = sessionStorage.getItem('isloggedin');
   const [currentAdmin, setCurrentAdmin] = useState(JSON.parse(sessionStorage.getItem('admin')));
@@ -20,20 +19,30 @@ const Navbar = () => {
     <div>
       {/* Navbar */}
       <nav className={`navbar navbar-expand-lg ${isHomePage ? 'navbar-transparent' : 'navbar-black'}`}>
-      {/* <nav className={`navbar navbar-expand-lg ${isServicePage ? 'navbar-transparent' : 'navbar-black'}`}> */}
         {/* Container wrapper */}
         <div className="container">
           {/* Navbar brand */}
           <Link className="navbar-brand me-2" to="/Admin/base">
             <img
               src={logo}
-              height={60}
+              height={40}
               alt="skjh"
               // loading="lazy"
               style={{ marginTop: "-8px", marginBottom: "-8px" }}
             />
           </Link>
-<<<<<<< HEAD
+          {/* Toggle button */}
+          {/* <button
+            className="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarButtonsExample"
+            aria-controls="navbarButtonsExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i className="fas fa-bars" />
+          </button> */}
           {/* Collapsible wrapper */}
           <div className="collapse navbar-collapse" id="navbarButtonsExample">
             {/* Left links */}
@@ -49,7 +58,7 @@ const Navbar = () => {
                 </Link>
               </li> */}
               <li className="nav-item">
-                <Link className="nav-link n-txt" to="/Services">
+                <Link className="nav-link n-txt" to="/services">
                   Services
                 </Link>
               </li>
@@ -62,7 +71,7 @@ const Navbar = () => {
             </ul>
             {/* Left links */}
             {isLoggedIn ? (
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center n-con">
 
                 <Link type='button' onClick={logout} className="btn btn-outline-light px-3 me-2">
                   Logout
@@ -71,13 +80,13 @@ const Navbar = () => {
               </div>
             ) : (
 
-              <div className=" n-con d-flex align-items-center">
+              <div className="n-con d-flex align-items-center">
 
-                <Link to="/Login" className="btn btn-outline-light ">
+                <Link to="/Loginn" className="btn btn-outline-light px-3" >
                   Login
                 </Link>
-                <Link to="/Signup" className="btn btn-light mx-3 ">
-                  Signup
+                <Link to="/Signup" className="btn btn-light" style={{marginLeft:'20px'}}>
+                  Sign up for free
                 </Link>
               </div>
 
@@ -88,67 +97,7 @@ const Navbar = () => {
         </div>
         {/* Container wrapper */}
       </nav>
-      {/* </nav> */}
       {/* Navbar */}
-=======
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/SignUp">
-            SignUp
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Login">
-            Login
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Services">
-            Services
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Servicestest">
-            Service Test
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Loginn">
-            Loginn
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Contact">
-            Contact
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Addservices">
-            Add Services
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Feedback">
-            Feedback
-          </Link>
-        </li>
-      
-      </ul>
-      <form className="form-inline my-2 my-lg-0">
-        <input
-          className="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
-    </div>
-  </nav>
-  
->>>>>>> fa51dc0f4cd8c6fff87a602f065ceeca871525dd
     </div>
   )
 }

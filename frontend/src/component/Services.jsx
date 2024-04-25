@@ -3,6 +3,7 @@ import plan from '../assets/planning.gif'
 import manage from '../assets/management.mp4'
 import Launch from '../assets/launch2.gif'
 import { Link } from 'react-router-dom'
+import './Service.css'
 
 
 const Services = () => {
@@ -20,7 +21,7 @@ const Services = () => {
                                 You've got a great idea. Now, make a plan to turn it into a great business.
                             </h4>
 
-                            <Link className='btn btn-outline-primary w-25 mt-3' to=''> Read more </Link>
+                            <Link className='btn btn-outline-primary w-25 mt-3' to='/PService'> Read more </Link>
 
                         </div>
                         <div className=''>
@@ -45,7 +46,7 @@ const Services = () => {
                             <h4 className="text-justify">
                                 Turn your business into a reality. Register, file, and start doing business.
                             </h4>
-                            <Link className='btn btn-outline-primary w-25 mt-3' to=''> Read more </Link>
+                            <Link className='btn btn-outline-primary w-25 mt-3' to='/LService'> Read more </Link>
 
 
                         </div>
@@ -64,7 +65,7 @@ const Services = () => {
                             <h4 className="text-justify">
                                 Run your business like a boss. Master day-to-day operations and prepare for success.
                             </h4>
-                            <Link className='btn btn-outline-primary w-25 mt-3' to=''> Read more </Link>
+                            <Link className='btn btn-outline-primary w-25 mt-3' to='.MService'> Read more </Link>
 
                         </div>
                         <div className="col-md-6">

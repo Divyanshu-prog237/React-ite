@@ -1,72 +1,123 @@
 import React from 'react'
+import { useFormik } from 'formik'
+import { Link, useNavigate } from 'react-router-dom'
+import {enqueueSnackbar} from 'notistack'
+import * as Yup from 'yup'
+import useAppContext from '../AppContext'
+
+const LoginSchema = Yup.object().shape({
+    password: Yup.string().min(4, 'Too short!').max(20, 'Too Long!'),
+    email: Yup.string().email('Invalid email').required('Required')
+});
 
 const Loginn = () => {
-  return (
-    <div className='logincss'>
-    <div className="containerr" id="containerr">
-      <div className="form-container sign-up-container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <div className="social-container">
-            <a href="#" className="social">
-              <i className="fab fa-facebook-f" />
-            </a>
-            <a href="#" className="social">
-              <i className="fab fa-google-plus-g" />
-            </a>
-            <a href="#" className="social">
-              <i className="fab fa-linkedin-in" />
-            </a>
-          </div>
-          <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>Sign Up</button>
-        </form>
-      </div>
-      <div className="form-container sign-in-container">
-        <form action="#">
-          <h1>Sign in</h1>
-          <div className="social-container">
-            <a href="#" className="social">
-              <i className="fab fa-facebook-f" />
-            </a>
-            <a href="#" className="social">
-              <i className="fab fa-google-plus-g" />
-            </a>
-            <a href="#" className="social">
-              <i className="fab fa-linkedin-in" />
-            </a>
-          </div>
-          <span>or use your account</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#" className='social'>Forgot your password?</a>
-          <button>Sign In</button>
-        </form>
-      </div>
-      <div className="overlay-container">
-        <div className="overlay">
-          <div className="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p>To keep connected with us please login with your personal info</p>
-            <button className="ghost" id="signIn">
-              Sign In
-            </button>
-          </div>
-          <div className="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p>Enter your personal details and start journey with us</p>
-            <button className="ghost" id="signUp">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  )
+    const { setLoggedin } = useAppContext();
+
+    const navigate = useNavigate();
+    const loginForm = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        onSubmit: async (values, action) => {
+            console.log(values);
+
+            const res = await fetch('http://localhost:3000/user/authenticate', {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log(res.status);
+            action.resetForm();
+
+            if (res.status === 200) {
+               enqueueSnackbar('Login Successful', { variant: 'success' });
+                setLoggedin(true);
+
+                const data = await res.json();
+                sessionStorage.setItem('isloggedin', true);
+                if(data.role === 'admin'){
+                    sessionStorage.setItem('admin', JSON.stringify(data));
+                    navigate('/admin/base');
+                }else{
+                    sessionStorage.setItem('user', JSON.stringify(data));
+                    navigate('/');
+                }
+            } else if (res.status === 400
+                ) {
+                enqueueSnackbar('Invalid Credentials', { variant: 'error' });
+            }
+        },
+        // step6: validation of LoginSchema
+        validationSchema: LoginSchema
+    });
+    return (
+        <section className="vh-100">
+            <div className="container-fluid h-custom">
+                <div className="row d-flex justify-content-center align-items-center h-100">
+                    <div className="col-md-9 col-lg-6 col-xl-5">
+                        <img
+                            src="https://i.pinimg.com/736x/6b/1b/22/6b1b22573f9f3d4bba11a9fa5cb45652.jpg"
+                            className="img-fluid"
+                            alt="Sample image"
+                        />
+                    </div>
+                    <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                        <form onSubmit={loginForm.handleSubmit}>
+                            
+                            {/* Email input */}
+                            <div className="form-outline mb-4">
+                                <input
+                                    type="email"
+                                    className="form-control form-control-lg"
+                                    placeholder="Enter a valid email address"
+                                    id="email"
+                                    onChange={loginForm.handleChange}
+                                    value={loginForm.values.email}
+                                />
+                                <label className="form-label" htmlFor="form3Example3">
+                                    Email address
+                                </label>
+                                <span style={{ color: 'red', fontsize: '10', marginLeft: 10 }}>{loginForm.touched.name && loginForm.errors.name}</span>
+                            </div>
+                            {/* Password input */}
+                            <div className="form-outline mb-3">
+                                <input
+                                    type="password"
+                                    className="form-control form-control-lg"
+                                    placeholder="Enter password"
+                                    id="password"
+                                    onChange={loginForm.handleChange}
+                                    value={loginForm.values.password}
+                                />
+                                <label className="form-label" htmlFor="form3Example4">
+                                    Password
+                                </label>
+                            </div>
+                            
+                            <div className="text-center text-lg-start mt-4 pt-2">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary btn-lg"
+                                    style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                                >
+                                    Login
+                                </button>
+                                <p className="small fw-bold mt-2 pt-1 mb-0">
+                                    Don't have an account?{" "}
+                                    <Link to="/Signup" className="link-danger">
+                                        Register
+                                    </Link>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    )
 }
- 
 export default Loginn
